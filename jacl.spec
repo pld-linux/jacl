@@ -1,3 +1,4 @@
+# TODO: resolve tcljava.jar conflict with tclBlend
 #
 # Conditional build:
 %bcond_with	javac	# use javac instead of jikes
@@ -14,6 +15,7 @@ Source0:	ftp://ftp.tcl.tk/pub/tcl/java/%{name}%{version}.tar.gz
 URL:		http://www.tcl.tk/software/java/
 %{?with_javac:BuildRequires:	jdk}
 %{!?with_javac:BuildRequires:	jikes}
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -65,6 +67,9 @@ rm -rf $RPM_BUILD_ROOT
 	BIN_INSTALL_DIR=$RPM_BUILD_ROOT%{_bindir} \
 	XP_LIB_INSTALL_DIR=$RPM_BUILD_ROOT%{_javadir}
 
+sed -i -e 's,^XP_LIB_INSTALL_DIR=.*,XP_LIB_INSTALL_DIR="%{_javadir}",' \
+	$RPM_BUILD_ROOT%{_bindir}/jaclsh
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -73,4 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README changes.txt diffs.txt known_issues.txt license.*
 %attr(755,root,root) %{_bindir}/jaclsh
 %{_javadir}/jacl.jar
+# XXX: dup with tclBlend
 %{_javadir}/tcljava.jar
