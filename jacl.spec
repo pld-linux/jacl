@@ -7,7 +7,7 @@ Summary:	Java Application Command Language
 Summary(pl):	Java Application Command Language - jêzyk poleceñ dla aplikacji
 Name:		jacl
 Version:	1.2.6
-Release:	0.1
+Release:	0.2
 License:	BSD
 Group:		Development/Languages/Java
 Source0:	ftp://ftp.tcl.tk/pub/tcl/java/%{name}%{version}.tar.gz
@@ -16,6 +16,7 @@ URL:		http://www.tcl.tk/software/java/
 %{?with_javac:BuildRequires:	jdk}
 %{!?with_javac:BuildRequires:	jikes}
 BuildRequires:	sed >= 4.0
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
