@@ -55,6 +55,8 @@ skryptowy.
 gzip -dc %{SOURCE0} | tar xzf - -C ..
 
 %build
+JAVA_HOME="%{_libdir}/java"
+export JAVA_HOME
 cd unix
 %configure2_13 \
 	%{?with_javac:--without-jikes}
