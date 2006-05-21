@@ -14,8 +14,8 @@ Group:		Development/Languages/Java
 Source0:	http://dl.sourceforge.net/tcljava/%{name}%{version}.tar.gz
 # Source0-md5:	44ec6149e1664d4fc13651e9288dd2b6
 URL:		http://tcljava.sourceforge.net/
-%{!?with_javac:BuildRequires:  jikes}
 BuildRequires:	jdk
+%{!?with_javac:BuildRequires:  jikes}
 BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
@@ -56,13 +56,12 @@ skryptowy.
 
 %build
 unset CLASSPATH || :
-unset JAVA_HOME || :
-export JAVA_HOME="%{java_home}" 
+export JAVA_HOME="%{java_home}"
 %configure2_13 \
-       %{?with_javac:--without-jikes} \
+	   %{?with_javac:--without-jikes} \
 	--with-jdk="%{java_home}"
 %{__make} \
-       %{?with_javac:JAVAC_FLAGS="-g -source 1.4"}
+	   %{?with_javac:JAVAC_FLAGS="-g -source 1.4"}
 
 %install
 rm -rf $RPM_BUILD_ROOT
