@@ -1,9 +1,9 @@
-# TODO: resolve tcljava.jar conflict with tclBlend
+# TODO
+# - resolve tcljava.jar conflict with tclBlend
 #
 # Conditional build:
 %bcond_with    javac   # use javac instead of jikes
 #
-%include /usr/lib/rpm/macros.java
 Summary:	Java Application Command Language
 Summary(pl):	Java Application Command Language - jêzyk poleceñ dla aplikacji
 Name:		jacl
@@ -14,12 +14,13 @@ Group:		Development/Languages/Java
 Source0:	http://dl.sourceforge.net/tcljava/%{name}%{version}.tar.gz
 # Source0-md5:	44ec6149e1664d4fc13651e9288dd2b6
 URL:		http://tcljava.sourceforge.net/
+BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	sed >= 4.0
 %if %{with javac}
 BuildRequires:	jdk
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 %else
-BuildRequires:  jikes
+BuildRequires:	jikes
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
