@@ -61,10 +61,10 @@ skryptowy.
 unset CLASSPATH || :
 export JAVA_HOME="%{java_home}"
 %configure2_13 \
-	   %{?with_javac:--without-jikes} \
+	%{?with_javac:--without-jikes} \
 	--with-jdk="%{java_home}"
 %{__make} \
-	   %{?with_javac:JAVAC_FLAGS="-g -source 1.4"}
+	%{?with_javac:JAVAC_FLAGS="-g -source 1.4"}
 
 %install
 rm -rf $RPM_BUILD_ROOT
