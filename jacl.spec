@@ -16,12 +16,14 @@ Source0:	http://dl.sourceforge.net/tcljava/%{name}%{version}.tar.gz
 URL:		http://tcljava.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	sed >= 4.0
+BuildRequires:	jpackage-utils
 %if %{with javac}
 BuildRequires:	jdk
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 %else
 BuildRequires:	jikes
+BuildRequires:	jre
 %endif
+ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
