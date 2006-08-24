@@ -1,5 +1,3 @@
-# TODO
-# - resolve tcljava.jar conflict with tclBlend
 #
 # Conditional build:
 %bcond_with    javac   # use javac instead of jikes
@@ -88,7 +86,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadir}/jaclsrc.jar
 %{_javadir}/janino.jar
 %{_javadir}/janinosrc.jar
-# XXX: dup with tclBlend
 %{_javadir}/tcljava.jar
 %{_javadir}/tcljavasrc.jar
 %{_javadir}/tjc.jar
