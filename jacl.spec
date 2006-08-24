@@ -7,22 +7,17 @@
 Summary:	Java Application Command Language
 Summary(pl):	Java Application Command Language - jêzyk poleceñ dla aplikacji
 Name:		jacl
-Version:	1.3.2
+Version:	1.4.0
 Release:	1
 License:	BSD
 Group:		Development/Languages/Java
 Source0:	http://dl.sourceforge.net/tcljava/%{name}%{version}.tar.gz
-# Source0-md5:	44ec6149e1664d4fc13651e9288dd2b6
+# Source0-md5:	8ffe26a586ac6860d92811787fbc8544
 URL:		http://tcljava.sourceforge.net/
+BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	sed >= 4.0
-BuildRequires:	jpackage-utils
-%if %{with javac}
-BuildRequires:	jdk
-%else
-BuildRequires:	jikes
-BuildRequires:	jre
-%endif
+BuildRequires:	jdk >= 1.4
 ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -63,11 +58,9 @@ skryptowy.
 %build
 unset CLASSPATH || :
 export JAVA_HOME="%{java_home}"
-%configure2_13 \
-	%{?with_javac:--without-jikes} \
+%configure \
 	--with-jdk="%{java_home}"
-%{__make} \
-	%{?with_javac:JAVAC_FLAGS="-g -source 1.4"}
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -87,6 +80,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README changes.txt diffs.txt known_issues.txt license.*
 %attr(755,root,root) %{_bindir}/jaclsh
+%attr(755,root,root) %{_bindir}/jdk.cfg
+%attr(755,root,root) %{_bindir}/tjc
+%{_javadir}/itcl.jar
+%{_javadir}/itclsrc.jar
 %{_javadir}/jacl.jar
+%{_javadir}/jaclsrc.jar
+%{_javadir}/janino.jar
+%{_javadir}/janinosrc.jar
 # XXX: dup with tclBlend
 %{_javadir}/tcljava.jar
+%{_javadir}/tcljavasrc.jar
+%{_javadir}/tjc.jar
+%{_javadir}/tjcsrc.jar
