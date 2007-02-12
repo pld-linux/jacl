@@ -3,7 +3,7 @@
 %bcond_with    javac   # use javac instead of jikes
 #
 Summary:	Java Application Command Language
-Summary(pl):	Java Application Command Language - jêzyk poleceñ dla aplikacji
+Summary(pl.UTF-8):   Java Application Command Language - jÄ™zyk poleceÅ„ dla aplikacji
 Name:		jacl
 Version:	1.4.0
 Release:	1
@@ -35,19 +35,19 @@ java::info, that provides a Jacl user with information about the
 public methods, fields, etc. of a given Java class or object. The Java
 Package enables the user to script Java.
 
-%description -l pl
-Jacl (czyli Java Application Command Language) to niezale¿ny od
-platformy jêzyk skryptowy dla Javy. Zbiór mo¿liwo¶ci i funkcjonalno¶æ
-Jacla maj± odzwierciedlaæ jêzyk skryptowy Tcl w wersji 8.0. Oprócz
-filozofii "napisaæ raz, uruchamiaæ wszêdzie" Jacl udostêpnia
-u¿ytkownikowi dwie inne kluczowe idee. Po pierwsze, Jacl pozwala na
-pisanie rozszerzeñ Tcl ca³kowicie w Javie. Pisz±cy rozszerzenia mog±
-u¿ywaæ klas dostarczonych w tcl.lang.*, a tak¿e dowolnych innych klas
-do pisania przeno¶nych rozszerzeñ. Po drugie, Jacl zawiera pakiet Java
-udostêpniaj±cy bezpo¶redni interfejs Tcl-a do obiektów Javy. Na
-przyk³ad pakiet Java zawiera polecenie Tcl java::info udostêpniaj±ce
-u¿ytkownikowi Jacla informacje o publicznych metodach, polach itp.
-danej klasy czy obiektu Javy. Pakiet Java pozwala u¿ywaæ Javy w sposób
+%description -l pl.UTF-8
+Jacl (czyli Java Application Command Language) to niezaleÅ¼ny od
+platformy jÄ™zyk skryptowy dla Javy. ZbiÃ³r moÅ¼liwoÅ›ci i funkcjonalnoÅ›Ä‡
+Jacla majÄ… odzwierciedlaÄ‡ jÄ™zyk skryptowy Tcl w wersji 8.0. OprÃ³cz
+filozofii "napisaÄ‡ raz, uruchamiaÄ‡ wszÄ™dzie" Jacl udostÄ™pnia
+uÅ¼ytkownikowi dwie inne kluczowe idee. Po pierwsze, Jacl pozwala na
+pisanie rozszerzeÅ„ Tcl caÅ‚kowicie w Javie. PiszÄ…cy rozszerzenia mogÄ…
+uÅ¼ywaÄ‡ klas dostarczonych w tcl.lang.*, a takÅ¼e dowolnych innych klas
+do pisania przenoÅ›nych rozszerzeÅ„. Po drugie, Jacl zawiera pakiet Java
+udostÄ™pniajÄ…cy bezpoÅ›redni interfejs Tcl-a do obiektÃ³w Javy. Na
+przykÅ‚ad pakiet Java zawiera polecenie Tcl java::info udostÄ™pniajÄ…ce
+uÅ¼ytkownikowi Jacla informacje o publicznych metodach, polach itp.
+danej klasy czy obiektu Javy. Pakiet Java pozwala uÅ¼ywaÄ‡ Javy w sposÃ³b
 skryptowy.
 
 %prep
