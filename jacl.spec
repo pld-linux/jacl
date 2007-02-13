@@ -3,7 +3,7 @@
 %bcond_with    javac   # use javac instead of jikes
 #
 Summary:	Java Application Command Language
-Summary(pl.UTF-8):   Java Application Command Language - język poleceń dla aplikacji
+Summary(pl.UTF-8):	Java Application Command Language - język poleceń dla aplikacji
 Name:		jacl
 Version:	1.4.0
 Release:	1
