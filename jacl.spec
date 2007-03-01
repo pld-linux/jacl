@@ -58,12 +58,12 @@ unset CLASSPATH || :
 export JAVA_HOME="%{java_home}"
 %configure \
 	--with-jdk="%{java_home}"
-%{__make}
+%{__make} -j1
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -j1 install \
 	BIN_INSTALL_DIR=$RPM_BUILD_ROOT%{_bindir} \
 	XP_LIB_INSTALL_DIR=$RPM_BUILD_ROOT%{_javadir} \
 	XP_TCLJAVA_INSTALL_DIR=$RPM_BUILD_ROOT%{_javadir}
