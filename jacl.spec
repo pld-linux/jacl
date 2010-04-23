@@ -16,7 +16,6 @@ BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	sed >= 4.0
 BuildRequires:	jdk >= 1.4
-ExclusiveArch:	i586 i686 pentium3 pentium4 athlon %{x8664} noarch
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
