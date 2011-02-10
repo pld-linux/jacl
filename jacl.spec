@@ -1,16 +1,12 @@
-#
-# Conditional build:
-%bcond_with    javac   # use javac instead of jikes
-#
 Summary:	Java Application Command Language
 Summary(pl.UTF-8):	Java Application Command Language - język poleceń dla aplikacji
 Name:		jacl
-Version:	1.4.0
+Version:	1.4.1
 Release:	1
 License:	BSD
 Group:		Development/Languages/Java
-Source0:	http://dl.sourceforge.net/tcljava/%{name}%{version}.tar.gz
-# Source0-md5:	8ffe26a586ac6860d92811787fbc8544
+Source0:	http://downloads.sourceforge.net/tcljava/%{name}%{version}.tar.gz
+# Source0-md5:	a7ec8300e8933164e854460c73ac6269
 URL:		http://tcljava.sourceforge.net/
 BuildRequires:	jpackage-utils
 BuildRequires:	rpmbuild(macros) >= 1.300
